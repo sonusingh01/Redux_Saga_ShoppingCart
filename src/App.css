@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.product-container {
+  border: 2x solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-container .product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(246, 243, 243);
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 12px 10px rgb(247, 243, 243);
+}
+
+.product-container .product-item img{
+  width:"100%"
+
+}
+.product-container .product-item:hover {
+  background-color: white;
+}
+
+
+.product-container .product-item div {
+  margin: 0.1em;
+}
