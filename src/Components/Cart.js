@@ -1,19 +1,22 @@
 import { Button, Grid } from "@mui/material";
 
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {  useNavigate } from "react-router-dom";
+import { addToCart, removeToCart } from "../Models/Action";
 
 function Cart() {
+const dispatch = useDispatch();
+
   let navigate = useNavigate(); 
   const routeChange = () =>{ 
     let path = `/`; 
     navigate(path);
   }
-  const routerchekout = () =>{ 
-    let path = `/checkout`; 
-    navigate(path);
-  }
+  // const routerchekout = () =>{ 
+  //   let path = `/checkout`; 
+  //   navigate(path);
+  // }
   const cartData = useSelector((state) => state.cartData);
   console.log(cartData);
 
@@ -67,14 +70,33 @@ function Cart() {
               <div>Category : {item.category} </div>
               <p>Description: {item.description} </p>
               <div>Price : {item.price} </div>
+
+              <div>
               <Button
+                variant="contained"
+                color="success"
+                onClick={() => dispatch(addToCart(item))}
+                style={{ marginRight: "3px" }}
+              >
+                Add to Cart
+              </Button>
+              <Button
+                variant="contained"
+                color="error"
+                onClick={() => dispatch(removeToCart(item.id))}
+              >
+                Remove to Cart
+              </Button>
+              
+            </div>
+              {/* <Button
               className="mb-3"
               variant="contained"
               color="warning"
               style={{ width: "30%", textAlign: "center" ,display:"flex", margin:"auto"}}onClick={routerchekout}
             >
               Checkout 
-            </Button>
+            </Button> */}
             </div>
 
          
