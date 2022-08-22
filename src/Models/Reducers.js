@@ -9,7 +9,8 @@ export const cartData = (data = [], action) => {
   switch (action.type) {
     case SHOW_TO_VIEW:
       console.log("SHOW_TO_VIEW action", action);
-      const remaining = data.find((item) => item.id !== action.data);
+      data.length = data.length ? data.length - 1 : [];
+      const remaining = data.filter((item) => item.id !== action.data);
       return [...remaining];
     case ADD_TO_CART:
       console.log("ADD_TO_CART action", action);

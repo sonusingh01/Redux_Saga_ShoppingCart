@@ -1,3 +1,5 @@
+
+
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -8,8 +10,8 @@ function Checkout() {
     cartData.map((item) => item.price).reduce((prev, next) => prev + next);
   console.warn(amount);
   return (
-    <div className="container">
-      <table class="table table-dark">
+    <div className="container" >
+       <table class="table table-dark">
         <thead>
           <tr>
             <th scope="col">#</th>
@@ -19,6 +21,7 @@ function Checkout() {
           </tr>
         </thead>
         <tbody>
+
           {cartData.map((item) => (
             <>
               <tr>
@@ -67,7 +70,13 @@ function Checkout() {
           <span>...................................................{amount-amount/10}</span>
         </div>
         </div>
-      </div>
+      </div> 
+
+        
+           
+              
+           
+
     </div>
   );
 }

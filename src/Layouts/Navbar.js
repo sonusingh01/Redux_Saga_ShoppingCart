@@ -56,6 +56,9 @@ function Navbar() {
             <Link to="/contact" className={classes.link}>
               Contact
             </Link>
+            {/* <Link to="/payment" className={classes.link}>
+              payment
+            </Link> */}
           <Link to="/cart " className={classes.link}  >
             <IconButton aria-label="cart">
               <Badge color="secondary" badgeContent={result.length } showZero>

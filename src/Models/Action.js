@@ -5,7 +5,7 @@ export const showToView=(data)=>{
     console.log(data)
       return {
           type:SHOW_TO_VIEW,
-          data
+          data:data
   
       }
   }   

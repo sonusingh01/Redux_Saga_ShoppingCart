@@ -3,7 +3,7 @@ import { Button, Grid } from "@mui/material";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {  useNavigate } from "react-router-dom";
-import { addToCart, removeToCart } from "../Models/Action";
+import { removeToCart } from "../Models/Action";
 
 function Cart() {
 const dispatch = useDispatch();
@@ -13,10 +13,10 @@ const dispatch = useDispatch();
     let path = `/`; 
     navigate(path);
   }
-  // const routerchekout = () =>{ 
-  //   let path = `/checkout`; 
-  //   navigate(path);
-  // }
+  const routerchekout = () =>{ 
+    let path = `/payment`; 
+    navigate(path);
+  }
   const cartData = useSelector((state) => state.cartData);
   console.log(cartData);
 
@@ -71,32 +71,27 @@ const dispatch = useDispatch();
               <p>Description: {item.description} </p>
               <div>Price : {item.price} </div>
 
-              <div>
-              <Button
-                variant="contained"
-                color="success"
-                onClick={() => dispatch(addToCart(item))}
-                style={{ marginRight: "3px" }}
-              >
-                Add to Cart
-              </Button>
-              <Button
+              <div style={{display:"flex", margin:"3rem ", padding:""}}>
+             
+              <Button style={{marginRight:"1rem"}}
                 variant="contained"
                 color="error"
                 onClick={() => dispatch(removeToCart(item.id))}
               >
                 Remove to Cart
               </Button>
-              
-            </div>
-              {/* <Button
-              className="mb-3"
+
+              <Button
+        
               variant="contained"
               color="warning"
-              style={{ width: "30%", textAlign: "center" ,display:"flex", margin:"auto"}}onClick={routerchekout}
+              style={{ width: "30%",   height:"2rem"}}onClick={routerchekout}
             >
               Checkout 
-            </Button> */}
+            </Button>
+              
+            </div>
+             
             </div>
 
          

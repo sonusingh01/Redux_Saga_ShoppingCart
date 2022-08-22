@@ -66,3 +66,7 @@
 .product-container .product-item div {
   margin: 0.1em;
 }
+
+.StripeElement{
+  width: 400px !important;
+}
